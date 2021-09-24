@@ -1,0 +1,7 @@
+// $--color-primary: #08A440 !default;
+// $--font-size-base: 13px !default;
+// $--font-size-small: 14px !default; // 左侧导航，选中加粗，表头等正文级别的重要信息
+$--font-path: '~fant-ui/lib/theme-chalk/fonts';
+@import '~fant-ui/packages/theme-chalk/src/common/var';
+// @import '~fant-ui/packages/theme-chalk/src/index';
+@import './transition.scss';
