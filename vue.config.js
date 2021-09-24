@@ -1,14 +1,22 @@
 /*
  * @Author: 徐庆凯
  * @Date: 2020-07-30 13:40:16
- * @LastEditTime: 2020-10-26 20:21:22
+ * @LastEditTime: 2021-09-24 11:41:36
  * @LastEditors: 徐庆凯
  * @Description:
- * @FilePath: /fant-pc/template/vue.config.js
+ * @FilePath: \micro-demo-vue\vue.config.js
  * @记得注释
  */
-const CompressionWebpackPlugin = require("compression-webpack-plugin");
 const Timestamp = new Date().getTime();
+const path = require("path");
+const { name } = require("./package");
+const port = process.env.port || 8080;
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
+
+const publicPath = process.env.VUE_APP_DEPLOYURL || `http://localhost:${port}`;
 
 module.exports = {
   publicPath: "./",
@@ -20,29 +28,60 @@ module.exports = {
       }
     }
   },
-  devServer: {
-    compress: true,
-    disableHostCheck: true
-  },
   chainWebpack: config => {
-    // config
-    //   .plugin('webpack-bundle-analyzer')
-    //   .use(require('webpack-bundle-analyzer').BundleAnalyzerPlugin);
-    // // 修复HMR
+    config.module
+      .rule("fonts")
+      .use("url-loader")
+      .loader("url-loader")
+      .options({
+        limit: 4096, // 小于4kb将会被打包成 base64
+        fallback: {
+          loader: "file-loader",
+          options: {
+            name: "fonts/[name].[hash:8].[ext]",
+            publicPath
+          }
+        }
+      })
+      .end();
+    config.module
+      .rule("images")
+      .use("url-loader")
+      .loader("url-loader")
+      .options({
+        limit: 4096, // 小于4kb将会被打包成 base64
+        fallback: {
+          loader: "file-loader",
+          options: {
+            name: "img/[name].[hash:8].[ext]",
+            publicPath
+          }
+        }
+      });
     config.resolve.symlinks(true);
     config.output.filename(`[name].[hash]${Timestamp}.js`).end();
   },
-  configureWebpack: config => {
-    if (process.env.NODE_ENV === "production") {
-      config.plugins.push(
-        new CompressionWebpackPlugin({
-          // 正在匹配需要压缩的文件后缀
-          test: /\.(js|css|svg|woff|ttf|json|html)$/,
-          // 大于10kb的会压缩
-          threshold: 10240
-          // 其余配置查看compression-webpack-plugin
-        })
-      );
+  devServer: {
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    port: port,
+    open: true,
+    overlay: {
+      warnings: false,
+      errors: true
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        "@": resolve("src")
+      }
+    },
+    output: {
+      library: `${name}-[name]`,
+      libraryTarget: "umd", // 把微应用打包成 umd 库格式
+      jsonpFunction: `webpackJsonp_${name}`
     }
   },
   runtimeCompiler: true,
