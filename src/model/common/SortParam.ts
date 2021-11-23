@@ -1,6 +1,6 @@
 export default class SortParam {
   //
-  property: Nullable<string> = null;
+  property: Nullable<string> = null
   //
-  direction: Nullable<string> = null;
+  direction: Nullable<string> = null
 }

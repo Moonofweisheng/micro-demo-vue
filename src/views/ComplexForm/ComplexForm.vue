@@ -48,14 +48,7 @@
               <el-row>
                 <el-col :span="12">
                   <el-form-item label="商品类目" prop="code">
-                    <el-select
-                      v-model="form.type"
-                      ref="type"
-                      filterable
-                      clearable
-                      value-key="uuid"
-                      placeholder="请下拉选择或输入查询"
-                    >
+                    <el-select v-model="form.type" ref="type" filterable clearable value-key="uuid" placeholder="请下拉选择或输入查询">
                       <el-option
                         v-for="item in optionList"
                         :key="item.uuid"
@@ -69,14 +62,7 @@
                 </el-col>
                 <el-col :span="12">
                   <el-form-item label="商品类型" prop="name">
-                    <el-select
-                      v-model="form.type"
-                      ref="type"
-                      filterable
-                      clearable
-                      value-key="uuid"
-                      placeholder="请下拉选择或输入查询"
-                    >
+                    <el-select v-model="form.type" ref="type" filterable clearable value-key="uuid" placeholder="请下拉选择或输入查询">
                       <el-option
                         v-for="item in optionList"
                         :key="item.uuid"

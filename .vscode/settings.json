@@ -30,7 +30,7 @@
   "vetur.format.options.tabSize": 2,
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {
-      "wrap_line_length": 120,
+      "wrap_line_length": 150,
       "wrap_attributes": true,
       "end_with_newline": true
       // #vue组件中html代码格式化样式

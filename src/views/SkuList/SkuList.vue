@@ -30,81 +30,39 @@
         <template>
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
         </template>
         <template slot="closed">
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
           <el-col :span="6">
             <el-form-item label="订单号">
-              <el-date-picker
-                type="date"
-                ref="applyDate"
-                v-model="applyDate"
-                value-format="yyyy-MM-dd"
-                placeholder="申请时间"
-              ></el-date-picker>
+              <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
             </el-form-item>
           </el-col>
         </template>
@@ -126,13 +84,13 @@
             <img style="width:96px;" :src="scope.row.appId" />
           </template>
         </el-table-column>
-        <el-table-column prop="flowNo" label="订单号"> </el-table-column>
-        <el-table-column prop="sysState" label="订单状态"> </el-table-column>
-        <el-table-column prop="type" label="订单类型"> </el-table-column>
-        <el-table-column prop="memberInfo" label="客户信息"> </el-table-column>
-        <el-table-column prop="consignee" label="收货人信息"> </el-table-column>
-        <el-table-column prop="realAmount" label="下单金额（元）"> </el-table-column>
-        <el-table-column prop="created" label="下单时间"> </el-table-column>
+        <el-table-column prop="flowNo" label="订单号"></el-table-column>
+        <el-table-column prop="sysState" label="订单状态"></el-table-column>
+        <el-table-column prop="type" label="订单类型"></el-table-column>
+        <el-table-column prop="memberInfo" label="客户信息"></el-table-column>
+        <el-table-column prop="consignee" label="收货人信息"></el-table-column>
+        <el-table-column prop="realAmount" label="下单金额（元）"></el-table-column>
+        <el-table-column prop="created" label="下单时间"></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
             <div>

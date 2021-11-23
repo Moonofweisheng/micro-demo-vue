@@ -14,7 +14,7 @@
       <detail-view>
         <div class="example-steps">
           <el-steps :space="300" :active="active" finish-status="success" align-center>
-            <el-step title="步骤1"> </el-step>
+            <el-step title="步骤1"></el-step>
             <el-step title="步骤2"></el-step>
             <el-step title="步骤3"></el-step>
             <el-step title="完成"></el-step>

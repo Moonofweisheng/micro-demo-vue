@@ -1,3 +1,12 @@
+<!--
+ * @Author: 徐庆凯
+ * @Date: 2021-10-27 17:25:37
+ * @LastEditTime: 2021-11-23 19:06:28
+ * @LastEditors: 徐庆凯
+ * @Description: 
+ * @FilePath: \micro-demo-vue\src\views\Index\Index.vue
+ * 记得注释
+-->
 <template>
   <!-- 此处为布局容器组件，由layouts目录引入，可以选择切换不同的布局 -->
   <basic-layout>
@@ -5,12 +14,12 @@
     <template slot="header">
       <div class="header-left">
         <img src="@/assets/logo.png" class="header-left-logo" />
-        <span>Fant Admin</span>
+        <span>{{ merchanInfo.name }}</span>
       </div>
       <el-dropdown class="header-right" trigger="click" @command="doLogout">
         <div class="user-name">
           <img src="@/assets/img/common/ic_portrait@2x.png" class="user-name-icon" />
-          <span>小星星</span>
+          <span>{{ userInfo.fullName }}</span>
         </div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item>登出</el-dropdown-item>
@@ -21,13 +30,7 @@
 
     <!-- 侧边导航 开始 -->
     <template slot="sider">
-      <el-menu
-        :unique-opened="false"
-        :default-active="activeMenu"
-        background-color="#242633"
-        text-color="#79879E"
-        active-text-color="#FFFFFF"
-      >
+      <el-menu :unique-opened="false" :default-active="activeMenu" background-color="#242633" text-color="#79879E" active-text-color="#FFFFFF">
         <div v-for="(item, key) in menus" :key="key">
           <router-link :to="item.url" v-if="item.children.length === 0">
             <el-menu-item :index="item.index" ref="menuItem">

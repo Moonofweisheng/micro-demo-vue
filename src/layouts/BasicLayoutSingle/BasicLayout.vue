@@ -4,7 +4,7 @@
       <div class="logo">
         <img class="logo-img" src="@/assets/logo.png" alt="logo" />
       </div>
-      <slot name="sider"> </slot>
+      <slot name="sider"></slot>
     </div>
     <div class="basic-layout-container">
       <header class="header">

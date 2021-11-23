@@ -1,6 +1,6 @@
 export default class FilterParam {
   //
-  property: Nullable<string> = null;
+  property: Nullable<string> = null
   //
-  value: any;
+  value: any
 }

@@ -1,18 +1,18 @@
 export default class ListModel {
   // 订单号
-  flowNo: string = "";
+  flowNo: string = ''
   // 订单状态
-  sysState: string = "";
+  sysState: string = ''
   // 订单类型
-  type: string = "";
+  type: string = ''
   // 下单渠道
-  appId: string = "";
+  appId: string = ''
   // 客户信息
-  memberInfo: string = "";
+  memberInfo: string = ''
   // 收货人信息
-  consignee: string = "";
+  consignee: string = ''
   // 下单金额（元）
-  realAmount: string = "";
+  realAmount: string = ''
   // 申请时间
-  created: string = "";
+  created: string = ''
 }

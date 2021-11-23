@@ -54,14 +54,7 @@
               <el-row>
                 <el-col :span="8">
                   <el-form-item label="门店类型" prop="type">
-                    <el-select
-                      v-model="form.type"
-                      ref="type"
-                      filterable
-                      clearable
-                      value-key="uuid"
-                      placeholder="请下拉选择或输入查询"
-                    >
+                    <el-select v-model="form.type" ref="type" filterable clearable value-key="uuid" placeholder="请下拉选择或输入查询">
                       <el-option
                         v-for="item in optionList"
                         :key="item.uuid"
